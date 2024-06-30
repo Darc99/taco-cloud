@@ -18,7 +18,8 @@ import com.darc.taco_cloud.model.Ingredient;
 import com.darc.taco_cloud.model.Taco;
 import com.darc.taco_cloud.model.TacoOrder;
 import com.darc.taco_cloud.model.Ingredient.Type;
-import com.darc.taco_cloud.repository.jdbc.IngredientRepository;
+// import com.darc.taco_cloud.repository.jdbc.IngredientRepository;
+import com.darc.taco_cloud.repository.Jpa.IngredientRepo;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -29,10 +30,10 @@ import lombok.extern.slf4j.Slf4j;
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
 
-  private final IngredientRepository ingredientRepo;
+  private final IngredientRepo ingredientRepo;
 
-  @Autowired
-  public DesignTacoController(IngredientRepository ingredientRepo) {
+  // @Autowired
+  public DesignTacoController(IngredientRepo ingredientRepo) {
     this.ingredientRepo = ingredientRepo;
   }
   

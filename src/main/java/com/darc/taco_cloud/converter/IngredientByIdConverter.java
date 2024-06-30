@@ -1,15 +1,16 @@
 package com.darc.taco_cloud.converter;
 
-import java.util.HashMap;
-import java.util.Map;
+// import java.util.HashMap;
+// import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import com.darc.taco_cloud.model.Ingredient;
-import com.darc.taco_cloud.model.Ingredient.Type;
-import com.darc.taco_cloud.repository.jdbc.IngredientRepository;
+import com.darc.taco_cloud.repository.Jpa.IngredientRepo;
+// import com.darc.taco_cloud.model.Ingredient.Type;
+// import com.darc.taco_cloud.repository.jdbc.IngredientRepository;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient>{
@@ -43,10 +44,10 @@ public class IngredientByIdConverter implements Converter<String, Ingredient>{
   // }
 
   // using jdbc
-  private IngredientRepository ingredientRepo;
+  private IngredientRepo ingredientRepo;
 
   @Autowired
-  public IngredientByIdConverter(IngredientRepository ingredientRepo) {
+  public IngredientByIdConverter(IngredientRepo ingredientRepo) {
     this.ingredientRepo = ingredientRepo;
   }
 
